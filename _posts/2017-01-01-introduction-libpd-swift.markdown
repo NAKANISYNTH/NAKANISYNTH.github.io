@@ -5,7 +5,7 @@ date: 2017-1-1 00:06:26 +0800
 categories: iOS
 ---
 
-PureDataのライブラリlibpdを導入する方法をまとめています。
+PureDataのライブラリlibpdのiOS版pd-for-iosを導入する方法をまとめています。
 環境はXcode8.2.2, Swift2.3。導入する対象のプロジェクトはすでにgitで管理されている前提です。
 
 # pd-for-iosをsubmoduleとして追加する
