@@ -30,13 +30,13 @@ $(PROJECT_DIR)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h
 libpd.xcodeprojファイルをプロジェクトナビゲーターにドラッグ・アンド・ドロップ
 GeneralからLinked Frameworks and Librariesのlibpd-ios.aを追加。
 user header search pathにpd-for-ios/libpdのパスを追加。recursiveを選択すること。
-![header search path]({{ site.url }}/assets/img/2017-01-01-headersearchpath.png)
+![header search path]({{ site.baseurl }}/assets/img/2017-01-01-headersearchpath.png)
 
 # pdのファイルを配置
 とりあえずサイン波を鳴らすだけのパッチを用意して音が鳴ることを確認する。
-![add files]({{ site.url }}/assets/img/2017-01-02-pdpatch.png)
+![add files]({{ site.baseurl }}/assets/img/2017-01-02-pdpatch.png)
 適当なフォルダをプロジェクトファイルと同じ階層に作成してそれをプロジェクトナビゲーターにドラッグ・アンド・ドロップ。Added foldersのCreate folder referencesをチェック。
-![add files]({{ site.url }}/assets/img/2017-01-01-addfiles.png)
+![add files]({{ site.baseurl }}/assets/img/2017-01-01-addfiles.png)
 
 # プログラムからpdのファイルを開く
 
