@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "iOSアプリでPureDataをサウンドエンジンとして利用する"
-date: 2017-1-1 00:06:26 +0800
 categories: iOS
 ---
 
