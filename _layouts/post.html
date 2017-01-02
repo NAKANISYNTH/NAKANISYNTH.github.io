@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: true
 ---
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -12,16 +13,9 @@ layout: default
     {{ page.content }}
   </div>
 
-  <footer class="article-footer">
-
-  {% include share.html %}
-
-  <hr/>
+  {% include dq.html %}
+  <!-- {% include share.html %} -->
 
   {% include author.html %}
-
-  </footer>
-
-  {% include dq.html %}
 
 </article>
