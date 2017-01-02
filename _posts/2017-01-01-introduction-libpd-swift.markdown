@@ -23,13 +23,14 @@ pd-for-iosとそのサブモジュールpure-dataがそれぞれmasterブラン�
 
 # Bridging-Headerを作成
 pd-for-iosはObjective-Cで書かれているので、Swiftのプロジェクトで読み込むにはBridging Headerが必要。
-new fileからヘッダーを選んでファイル作成。名前を"<プロジェクト名>-Bridging-Header.h"に変更してbuild settingsのswift compiler - GeneralのObjective-C Bridging Headerの項目にパス"$(PROJECT_DIR)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h"を記述。
+* new fileからヘッダーを選んでファイル作成。
+* 名前を"<プロジェクト名>-Bridging-Header.h"に変更してbuild settingsのswift compiler - GeneralのObjective-C Bridging Headerの項目にパス"$(PROJECT_DIR)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h"を記述。
 
 
 # libpdをプロジェクトに組み込む
-libpd.xcodeprojファイルをプロジェクトナビゲーターにドラッグ・アンド・ドロップ
-GeneralからLinked Frameworks and Librariesのlibpd-ios.aを追加。
-user header search pathにpd-for-ios/libpdのパスを追加。recursiveを選択すること。
+* libpd.xcodeprojファイルをプロジェクトナビゲーターにドラッグ・アンド・ドロップ
+* GeneralからLinked Frameworks and Librariesに libpd-ios.a, AVFoundation.framework, AudioToolbox.framework を追加。
+* user header search pathに"pd-for-ios/libpd"を追加。recursiveを選択すること。
 ![header search path]({{site.baseurl}}/assets/img/2017-01-01-headersearchpath.png)
 
 # pdのファイルを配置
