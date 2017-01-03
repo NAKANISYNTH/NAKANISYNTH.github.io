@@ -11,14 +11,14 @@ PureDataのライブラリlibpdのiOS版pd-for-iosを導入する方法をまと
 # pd-for-iosをsubmoduleとして追加する
 terminalからプロジェクトのリポジトリ内で
 
-```
+{% highlight terminal %}
 $git clone https://github.com/libpd/pd-for-ios
 $cd pd-for-ios/
 pd-for-ios $git submodule init
 pd-for-ios $git submodule update
 pd-for-ios $cd ..
 $git submodule add pd-for-ios/
-```
+{% endhighlight %}
 pd-for-iosとそのサブモジュールpure-dataがそれぞれmasterブランチになっていることを確認する。
 私の場合クローン直後はHEADになってて、必要なファイルがなくてビルドが通らなかった。
 
