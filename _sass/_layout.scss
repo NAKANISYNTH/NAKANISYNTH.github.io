@@ -218,6 +218,10 @@ p.readmore {
 
 }
 
+.article-content{
+  padding-bottom:30px;
+}
+
 .article-content a {
   border-bottom:1px dotted red;
   text-decoration:none;
@@ -275,8 +279,8 @@ p.readmore {
     float:left;
   }
   display:inline-block;
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   border-radius: 5%;
   -webkit-background-size: cover !important;
   background-size: cover !important;

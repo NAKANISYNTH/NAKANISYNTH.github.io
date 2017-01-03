@@ -6,16 +6,19 @@ comments: true
 
   <header class="artilce_header">
     <h1 class="artilce_title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="artilce_meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+    <p class="artilce_meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+      <a href="{{ "/archive" | prepend: site.baseurl }}">{{page.categories}}</a>
+      {% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}
+    </p>
   </header>
 
   <div class="article-content" itemprop="articleBody">
     {{ page.content }}
   </div>
 
-  {% include share.html %}
+  <!-- {% include share.html %} -->
+  <!-- {% include author.html %} -->
   {% include dq.html %}
 
-  {% include author.html %}
 
 </article>
