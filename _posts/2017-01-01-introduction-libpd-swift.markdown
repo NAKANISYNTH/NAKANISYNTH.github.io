@@ -37,7 +37,7 @@ pd-for-iosはObjective-Cで書かれているので、Swiftのプロジェクト
 # pdのファイルを配置
 とりあえずサイン波を鳴らすだけのパッチを用意して音が鳴ることを確認する。
 ![add files]({{site.baseurl}}/assets/img/2017-01-02-pdpatch.png)
-適当なフォルダをプロジェクトファイルと同じ階層に作成してそれをプロジェクトナビゲーターにドラッグ・アンド・ドロップ。Added foldersのCreate folder referencesをチェック。
+Resourcesフォルダにパッチを入れる。Resourcesフォルダ内に追加したパッチを全てプロジェクトナビゲーターにドラッグ・アンド・ドロップ。Added foldersのCreate folder referencesをチェック。
 ![add files]({{site.baseurl}}/assets/img/2017-01-01-addfiles.png)
 
 # プログラムからpdのファイルを開く
@@ -45,17 +45,17 @@ pd-for-iosはObjective-Cで書かれているので、Swiftのプロジェクト
 Player.swift
 
 {% highlight swift %}
-import Foundation
-
 class Player : NSObject, PdReceiverDelegate{
     
-    let audioController = PdAudioController()
-    static let sharedInstance = Player()
+    let audioController = PdAudioController() // PureData
     var pdPointer:UnsafeMutablePointer<Void>?
     
-    override init() {
-        super.init()
-        
+    
+    class var sharedInstance : Player {
+        struct Static {
+            static let instance : Player = Player()
+        }
+        return Static.instance
     }
     
     func openPdFile(){
@@ -64,7 +64,7 @@ class Player : NSObject, PdReceiverDelegate{
         
         if pdPointer == nil {
             
-            pdPointer = PdBase.openFile("pd-patches/main.pd", path: NSBundle.mainBundle().resourcePath)
+            pdPointer = PdBase.openFile("main.pd", path: NSBundle.mainBundle().resourcePath)
             print("open pd file")
         }
     }
@@ -79,6 +79,7 @@ class Player : NSObject, PdReceiverDelegate{
     }
     
 }
+
 {% endhighlight %}
 
 ViewController.swift
