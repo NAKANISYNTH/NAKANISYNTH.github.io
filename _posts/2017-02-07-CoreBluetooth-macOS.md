@@ -46,7 +46,7 @@ open func peripheralDidUpdateRSSI(_ peripheral: CBPeripheral, error: Error?) {
     }
 }
 #else
-public func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?){
+open func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?){
     if let orp = availableOrphe(peripheral: peripheral){
         orp.RSSI = RSSI
         delegate?.didUpdateRSSI?(orphe: orp)
